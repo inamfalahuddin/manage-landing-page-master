@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script defer src="./js/alpine.js"></script>
+
+    <title>Frontend Mentor | Manage landing page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body class="font-vietnam">
+    <header
+      class="bg-[url('../images/bg-tablet-pattern.svg')] bg-no-repeat max-w-[1600px] mx-auto bg-top-10 md:bg-right-10"
+      x-data="{hamburger: false}"
+    >
+      <!-- navbar -->
+      <div
+        class="container mx-auto py-14 px-5 lg:px-20 flex justify-between items-center"
+      >
+        <a href="">
+          <img src="./images/logo.svg" class="fixed md:static" />
+        </a>
+
+        <!-- backdrop -->
+        <div
+          class="backdrop md:hidden fixed z-10 top-0 right-0 bottom-0 left-0 bg-primary-300 z-0"
+          x-show="hamburger"
+          x-transition
+        ></div>
+        <!-- end backdrop -->
+
+        <!-- navigation -->
+        <ul
+          class="nav-links md:flex justify-center items-center text-primary-200 bg-white md:bg-transparent shadow-lg md:shadow-none fixed md:static w-[90%] md:w-[70%] top-28 rounded-md p-10 md:p-0 z-20"
+          :class="hamburger ? '-translate-y-0 transition-all' : '-translate-y-[160%] md:-translate-y-0  transition-all'"
+        >
+          <li
+            class="nav-link hover:text-neutral-100 transition-all mx-5 my-5 text-center md:text-left"
+          >
+            <a href="#">Pricing</a>
+          </li>
+          <li
+            class="nav-link hover:text-neutral-100 transition-all mx-5 my-5 text-center md:text-left"
+          >
+            <a href="#">Product</a>
+          </li>
+          <li
+            class="nav-link hover:text-neutral-100 transition-all mx-5 my-5 text-center md:text-left"
+          >
+            <a href="#">About Us</a>
+          </li>
+          <li
+            class="nav-link hover:text-neutral-100 transition-all mx-5 my-5 text-center md:text-left"
+          >
+            <a href="#">Careers</a>
+          </li>
+          <li
+            class="nav-link hover:text-neutral-100 transition-all mx-5 my-5 text-center md:text-left"
+          >
+            <a href="#">Comunity</a>
+          </li>
+        </ul>
+
+        <button
+          class="hidden md:block px-5 py-2 bg-primary-100 text-white rounded-full hover:opacity-50 transition-all"
+        >
+          Get Starged
+        </button>
+        <!-- end navigation -->
+
+        <!-- hamburger menu -->
+        <div
+          class="cursor-pointer w-7 h-5 flex md:opacity-0 md:cursor-default flex-col justify-between z-30 fixed right-5"
+          @click="hamburger = !hamburger"
+          @click.away="hamburger = false"
+        >
+          <span
+            class="bg-neutral-200 h-[3px] w-full"
+            :class="hamburger ? 'rotate-45 translate-y-3 transition-all' : 'rotate-0 translate-y-0 transition-all'"
+          ></span>
+          <span
+            class="bg-neutral-200 h-[3px] w-full opacity-0"
+            :class="hamburger ? 'translate-x-2 opacity-0 transition-all' : 'translate-x-0 opacity-100 transition-all'"
+          ></span>
+          <span
+            class="bg-neutral-200 h-[3px] w-full"
+            :class="hamburger ? '-rotate-45 -translate-y-1 transition-all' : 'rotate-0 translate-y-0 transition-all'"
+          ></span>
+        </div>
+        <!-- end hamburger menu -->
+      </div>
+      <!-- end navbar -->
+
+      <!-- main hero -->
+      <div class="container mx-auto mb-20 px-5 lg:px-20 grid grid-cols-2">
+        <div
+          class="col-span-2 md:col-span-1 order-2 md:order-1 text-center md:text-left flex items-center"
+        >
+          <div>
+            <h1
+              class="text-4xl md:text-6xl font-bold text-primary-200 font-vietnam"
+            >
+              Bring everyone together to build better products.
+            </h1>
+            <p class="text-neutral-100 md:max-w-sm py-10">
+              Manage makes it simple for software teams to plan day-to-day tasks
+              while keeping the larger team goals in view.
+            </p>
+            <button
+              class="px-5 py-2 bg-primary-100 text-white rounded-full hover:opacity-50 transition-all"
+            >
+              Get Starged
+            </button>
+          </div>
+        </div>
+        <div class="col-span-2 md:col-span-1 order-1 md:order-2 mb-10 md:mb-0">
+          <img src="./images/illustration-intro.svg" alt="" />
+        </div>
+      </div>
+      <!-- end main hero -->
+    </header>
+    <!-- End Navbar -->
+
+    <!-- main -->
+    <main>
+      <!-- about -->
+      <section
+        class="md:bg-[url('../images/bg-tablet-pattern.svg')] bg-no-repeat bg-right-20"
+      >
+        <div
+          class="container lg:px-20 px-5 mx-auto py-10 md:py-20 grid grid-cols-2"
+        >
+          <div class="col-span-2 md:col-span-1 text-center md:text-left">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-primary-200 font-vietnam"
+            >
+              What's different about manage ?
+            </h2>
+            <p class="text-neutral-100 md:max-w-sm py-7">
+              Manage provides all the functionality your team needs, without the
+              complexity. Our software is tailor-made for modern digital product
+              teams
+            </p>
+          </div>
+          <div class="col-span-2 md:col-span-1">
+            <div class="wrapper mb-5">
+              <div class="bg-neutral-300 md:bg-transparent py-2 rounded-full">
+                <span class="py-2 px-5 text-white bg-primary-100 rounded-full"
+                  >01</span
+                >
+                <h5
+                  class="inline-block text-sm md:text-xl font-bold text-primary-200 font-vietnam md:ml-8"
+                >
+                  Track company-wide progress
+                </h5>
+              </div>
+              <p class="text-neutral-100 py-5 md:pl-24">
+                See how your day-to-day tasks fit into the wider vision. Go from
+                tracking progress at the milestone level all the way done to the
+                smallest of details. Never lose sight of the bigger picture
+                again.
+              </p>
+            </div>
+            <div class="wrapper mb-5">
+              <div class="bg-neutral-300 md:bg-transparent py-2 rounded-full">
+                <span class="py-2 px-5 text-white bg-primary-100 rounded-full"
+                  >02</span
+                >
+                <h5
+                  class="inline-block text-sm md:text-xl font-bold text-primary-200 font-vietnam md:ml-7"
+                >
+                  Advanced built-in reports
+                </h5>
+              </div>
+              <p class="text-neutral-100 py-5 md:pl-24">
+                Set internal delivery estimates and track progress toward
+                company goals. Our customisable dashboard helps you build out
+                the reports you need to keep key stakeholders informed.
+              </p>
+            </div>
+            <div class="wrapper mb-5">
+              <div class="bg-neutral-300 md:bg-transparent py-2 rounded-full">
+                <span class="py-2 px-5 text-white bg-primary-100 rounded-full"
+                  >03</span
+                >
+                <h5
+                  class="inline-block text-sm md:text-xl font-bold text-primary-200 font-vietnam md:ml-7"
+                >
+                  Everything you need in one place
+                </h5>
+              </div>
+              <p class="text-neutral-100 py-5 md:pl-24">
+                Stop jumping from one service to another to communicate, store
+                files, track tasks and share documents. Manage offers an
+                all-in-one team productivity solution.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="text-center my-10 text-center"
+          x-data="{btn: 'first', margin: '0%'}"
+        >
+          <div
+            x-data="{count: 0, box : [
+              {id: 1, label: 'first'},
+              {id: 2, label: 'second'},
+              {id: 3, label: 'third'},
+              {id: 4, label: 'fourth'}
+            ]}"
+          >
+            <div x-data="{ timer: 1000, addCount: () => {this.count++}}"></div>
+          </div>
+          <h2
+            class="text-3xl md:text-4xl font-bold text-primary-200 font-vietnam"
+          >
+            Whats they've said
+          </h2>
+          <div
+            class="wrapper mt-10 pt-10 pb-5 flex gap-5 overflow-hidden md:overflow-scroll no-scrollbar"
+          >
+            <div
+              class="box-wrapper bg-neutral-400 inline-block text-center max-w-md min-w-full md:min-w-[28rem] px-5 pb-5 rounded-md transition-all text-center"
+              x-bind:style="btn ? 'margin-left: '+ margin +'' : ''"
+            >
+              <img
+                src="./images/avatar-anisha.png"
+                width="60"
+                class="inline-block transform -translate-y-7"
+              />
+              <h5 class="font-bold text-primary-200">Anisha Li</h5>
+              <p class="text-sm py-4">
+                “Manage has supercharged our team’s workflow. The ability to
+                maintain visibility on larger milestones at all times keeps
+                everyone motivated.”
+              </p>
+            </div>
+            <div
+              class="box-wrapper bg-neutral-400 inline-block text-center max-w-md min-w-full md:min-w-[28rem] px-5 pb-5 rounded-md"
+            >
+              <img
+                src="./images/avatar-ali.png"
+                width="60"
+                class="inline-block transform -translate-y-7"
+              />
+              <h5 class="font-bold text-primary-200">Ali Bravo</h5>
+              <p class="text-sm py-4">
+                “We have been able to cancel so many other subscriptions since
+                using Manage. There is no more cross-channel confusion and
+                everyone is much more focused.”
+              </p>
+            </div>
+            <div
+              class="box-wrapper bg-neutral-400 inline-block text-center max-w-md min-w-full md:min-w-[28rem] px-5 pb-5 rounded-md"
+            >
+              <img
+                src="./images/avatar-richard.png"
+                width="60"
+                class="inline-block transform -translate-y-7"
+              />
+              <h5 class="font-bold text-primary-200">Richard Watts</h5>
+              <p class="text-sm py-4">
+                “Manage allows us to provide structure and process. It keeps us
+                organized and focused. I can’t stop recommending them to
+                everyone I talk to!”
+              </p>
+            </div>
+            <div
+              class="box-wrapper bg-neutral-400 inline-block text-center max-w-md min-w-full md:min-w-[28rem] px-5 pb-5 rounded-md"
+            >
+              <img
+                src="./images/avatar-shanai.png"
+                width="60"
+                class="inline-block transform -translate-y-7"
+              />
+              <h5 class="font-bold text-primary-200">Shanai Ghough</h5>
+              <p class="text-sm py-4">
+                “We have been able to cancel so many other subscriptions since
+                using Manage. There is no more cross-channel confusion and
+                everyone is much more focused.”
+              </p>
+            </div>
+          </div>
+          <div class="btn-slider cursor-default md:hidden">
+            <span
+              class="border border-primary-100 w-3 h-3 inline-block rounded-full hover:bg-primary-100 cursor-pointer transition-all mx-1"
+              @click="btn='first'; margin='0%'"
+              :class="btn === 'first' ? 'bg-primary-100' : 'bg-transparent'"
+            ></span>
+            <span
+              class="border border-primary-100 w-3 h-3 inline-block rounded-full hover:bg-primary-100 cursor-pointer transition-all mx-1"
+              @click="btn='second'; margin='-104%'"
+              :class="btn === 'second' ? 'bg-primary-100' : 'bg-transparent'"
+            ></span>
+            <span
+              class="border border-primary-100 w-3 h-3 inline-block rounded-full hover:bg-primary-100 cursor-pointer transition-all mx-1"
+              @click="btn='third'; margin='-208%'"
+              :class="btn === 'third' ? 'bg-primary-100' : 'bg-transparent'"
+            ></span>
+            <span
+              class="border border-primary-100 w-3 h-3 inline-block rounded-full hover:bg-primary-100 cursor-pointer transition-all mx-1"
+              @click="btn='fourth'; margin='-312%'"
+              :class="btn === 'fourth' ? 'bg-primary-100' : 'bg-transparent'"
+            ></span>
+          </div>
+          <button
+            class="inline-block px-5 py-2 my-10 bg-primary-100 text-white rounded-full hover:opacity-50 transition-all"
+          >
+            Get Starged
+          </button>
+        </div>
+      </section>
+      <!-- end about -->
+
+      <section
+        class="bg-primary-100 bg-[url('../images/bg-simplify-section-mobile.svg')] md:bg-[url('../images/bg-simplify-section-desktop.svg')] bg-no-repeat"
+      >
+        <div
+          class="container mx-auto px-5 py-20 text-center md:text-left grid grid-cols-2"
+        >
+          <div class="col-span-2 md:col-span-1">
+            <h2 class="text-3xl md:text-4xl font-bold text-white font-vietnam">
+              Simplify how your team works today.
+            </h2>
+          </div>
+          <div class="col-span-2 md:col-span-1 text-center md:text-right">
+            <button
+              class="inline-block px-5 py-2 mt-10 md:mt-0 bg-white text-primary-100 rounded-full hover:opacity-50 transition-all"
+            >
+              Get Starged
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- end main -->
+
+    <!-- footer -->
+    <footer class="bg-neutral-200">
+      <div class="container mx-auto px-10 py-20 grid grid-cols-8">
+        <div
+          class="col-span-8 md:col-span-2 my-10 md:my-0 text-center md:text-left order-5 md:order-1"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="inline-block"
+            width="146"
+            height="24"
+          >
+            <g fill="none" fill-rule="evenodd">
+              <path
+                fill="#fff"
+                fill-rule="nonzero"
+                d="M40.014 16.809V8.553c0-1.577.366-2.82 1.098-3.73.733-.91 1.65-1.365 2.75-1.365 2.158 0 3.237 1.577 3.237 4.731v8.62h3.782v-9.58c0-2.415-.5-4.22-1.503-5.417C48.376.615 46.945.017 45.084.017c-1.222 0-2.34.234-3.352.703a6.833 6.833 0 00-2.56 2.043h-.066C38.126.932 36.486.017 34.184.017c-.969 0-1.902.217-2.799.653a6.976 6.976 0 00-2.353 1.878h-.05V.265H25.2v16.527h3.782V8.553c0-1.577.372-2.82 1.115-3.73.743-.91 1.693-1.365 2.849-1.365 2.19 0 3.286 1.577 3.286 4.731v8.62h3.782zm21.101.248c2.246 0 3.997-.827 5.252-2.482h.05v2.217h3.616V.265h-3.782V2.25h-.066C64.93.761 63.23.017 61.082.017a7.76 7.76 0 00-5.681 2.415c-.705.75-1.26 1.66-1.668 2.73a9.589 9.589 0 00-.611 3.44c0 1.258.203 2.416.61 3.475.408 1.059.964 1.952 1.669 2.68a7.348 7.348 0 002.535 1.696 8.325 8.325 0 003.18.604zm.595-3.441c-1.399 0-2.538-.466-3.419-1.398-.88-.932-1.321-2.132-1.321-3.599 0-1.555.454-2.804 1.362-3.747.909-.943 2.04-1.414 3.394-1.414 1.343 0 2.458.493 3.345 1.48.886.988 1.33 2.215 1.33 3.681 0 1.467-.455 2.667-1.363 3.599-.909.932-2.018 1.398-3.328 1.398zm27.112 3.193V7.064c0-2.393-.536-4.166-1.61-5.319C86.14.593 84.655.017 82.762.017a7.373 7.373 0 00-3.056.645 6.958 6.958 0 00-2.477 1.87h-.05V.264h-3.782v16.527h3.782V8.487c0-1.588.388-2.823 1.164-3.706.777-.882 1.814-1.323 3.113-1.323.595 0 1.104.077 1.528.231.424.155.796.406 1.115.753.32.348.556.819.71 1.415.154.595.231 1.323.231 2.183v8.769h3.782zm10.218.248c2.246 0 3.996-.827 5.252-2.482h.05v2.217h3.616V.265h-3.782V2.25h-.066C102.855.761 101.154.017 99.007.017a7.76 7.76 0 00-5.682 2.415c-.704.75-1.26 1.66-1.668 2.73a9.589 9.589 0 00-.61 3.44c0 1.258.203 2.416.61 3.475.408 1.059.964 1.952 1.668 2.68a7.348 7.348 0 002.536 1.696 8.325 8.325 0 003.179.604zm.594-3.441c-1.398 0-2.538-.466-3.418-1.398-.881-.932-1.322-2.132-1.322-3.599 0-1.555.455-2.804 1.363-3.747.908-.943 2.04-1.414 3.394-1.414 1.343 0 2.458.493 3.344 1.48.886.988 1.33 2.215 1.33 3.681 0 1.467-.455 2.667-1.363 3.599-.908.932-2.018 1.398-3.328 1.398zm19.07 10.125c1.2 0 2.274-.14 3.22-.422.947-.281 1.743-.673 2.387-1.175a6.385 6.385 0 001.602-1.844 8.14 8.14 0 00.916-2.383c.188-.86.281-1.803.281-2.829V.265h-3.782v1.737h-.066a7.059 7.059 0 00-2.353-1.49A7.62 7.62 0 00118.142 0c-1.508 0-2.862.358-4.062 1.075-1.2.717-2.134 1.713-2.8 2.987-.666 1.273-.999 2.705-.999 4.293 0 1.61.35 3.038 1.049 4.285.699 1.246 1.66 2.203 2.882 2.87 1.222.667 2.598 1.001 4.129 1.001 2.047 0 3.716-.673 5.004-2.018h.066v1.753c0 1.17-.43 2.14-1.288 2.912-.86.772-2.07 1.158-3.634 1.158-1.068 0-2.006-.132-2.816-.397-.809-.265-1.742-.678-2.799-1.24l-.892 3.341c.925.552 1.966.976 3.122 1.274 1.156.298 2.356.447 3.6.447zm.132-10.72c-1.365 0-2.491-.434-3.377-1.3-.887-.865-1.33-2.026-1.33-3.482 0-1.4.435-2.542 1.305-3.425.87-.882 2.004-1.323 3.402-1.323 1.332 0 2.442.435 3.328 1.307.886.871 1.33 2.002 1.33 3.391 0 1.401-.433 2.556-1.297 3.466-.864.91-1.985 1.365-3.361 1.365zm19.086 4.036c1.542 0 2.899-.281 4.071-.844 1.173-.562 2.133-1.323 2.882-2.283l-2.642-2.266c-1.035 1.301-2.406 1.952-4.113 1.952-1.21 0-2.237-.337-3.08-1.01-.842-.672-1.384-1.593-1.627-2.762h12.024c.066-.397.099-.9.099-1.506 0-1.599-.325-3.027-.975-4.285a7.198 7.198 0 00-2.807-2.961c-1.222-.717-2.632-1.075-4.228-1.075a8.191 8.191 0 00-3.188.62c-.99.414-1.844.99-2.56 1.729-.715.739-1.277 1.638-1.684 2.696-.407 1.06-.611 2.212-.611 3.458 0 1.688.369 3.185 1.106 4.492.738 1.307 1.746 2.308 3.023 3.003 1.277.695 2.714 1.042 4.31 1.042zm3.815-10.274h-8.257c.264-1.059.776-1.878 1.535-2.457.76-.579 1.663-.868 2.709-.868 1.057 0 1.93.298 2.618.893.688.596 1.153 1.406 1.395 2.432z"
+              />
+              <g fill="#F3603C">
+                <path
+                  d="M2.786 10.286c1.538 0 2.785 1.279 2.785 2.857C5.571 14.72 4.324 16 2.786 16 1.247 16 0 14.72 0 13.143c0-1.578 1.247-2.857 2.786-2.857zM2.786 0C4.324 0 5.57 1.28 5.57 2.857c0 1.578-1.247 2.857-2.785 2.857C1.247 5.714 0 4.435 0 2.857 0 1.28 1.247 0 2.786 0zm10.028 0C14.353 0 15.6 1.28 15.6 2.857c0 1.578-1.247 2.857-2.786 2.857-1.538 0-2.785-1.279-2.785-2.857C10.029 1.28 11.276 0 12.814 0z"
+                />
+                <ellipse
+                  cx="12.814"
+                  cy="13.257"
+                  opacity=".5"
+                  rx="2.786"
+                  ry="2.857"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div
+          class="col-span-4 md:col-span-2 text-white order-2 md:order-2 px-10"
+        >
+          <ul>
+            <li class="hover:text-primary-100 transition-all mb-5">
+              <a href="">Home</a>
+            </li>
+            <li class="hover:text-primary-100 transition-all mb-5">
+              <a href="">Pricing</a>
+            </li>
+            <li class="hover:text-primary-100 transition-all mb-5">
+              <a href="">Products</a>
+            </li>
+            <li class="hover:text-primary-100 transition-all mb-5">
+              <a href="">About Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-span-4 md:col-span-2 text-white order-3 md:order-3">
+          <ul>
+            <li class="hover:text-primary-100 transition-all mb-5">
+              <a href="">Careers</a>
+            </li>
+            <li class="hover:text-primary-100 transition-all mb-5">
+              <a href="">Community</a>
+            </li>
+            <li class="hover:text-primary-100 transition-all mb-5">
+              <a href="">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="col-span-8 md:col-span-2 text-center order-1 md:order-4 mb-10"
+        >
+          <div class="flex justify-center">
+            <input
+              type="text"
+              class="inline-block py-2 px-4 rounded-full w-full"
+              placeholder="Updates in your inbox"
+            />
+            <button
+              class="px-5 py-2 ml-2 bg-primary-100 text-white rounded-full hover:opacity-50 transition-all"
+            >
+              Go
+            </button>
+          </div>
+        </div>
+        <div
+          class="col-span-8 text-center md:text-left my-5 md:col-span-4 order-4"
+        >
+          <ul x-data="{hover: '', src: ''}" class="cursor-default">
+            <li
+              @mouseover="hover = 'facebook'"
+              @mouseout="hover = ''"
+              class="inline-block mr-2"
+            >
+              <a href="">
+                <img
+                  :src="hover == 'facebook' ? './images/icon-facebook-active.svg' : './images/icon-facebook.svg'"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li
+              @mouseover="hover = 'youtube'"
+              @mouseout="hover = ''"
+              class="inline-block mr-2"
+            >
+              <a href="">
+                <img
+                  :src="hover == 'youtube' ? './images/icon-youtube-active.svg' : './images/icon-youtube.svg'"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li
+              @mouseover="hover = 'twitter'"
+              @mouseout="hover = ''"
+              class="inline-block mr-2"
+            >
+              <a href="">
+                <img
+                  :src="hover == 'twitter' ? './images/icon-twitter-active.svg' : './images/icon-twitter.svg'"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li
+              @mouseover="hover = 'pinterest'"
+              @mouseout="hover = ''"
+              class="inline-block mr-2"
+            >
+              <a href="">
+                <img
+                  :src="hover == 'pinterest' ? './images/icon-pinterest-active.svg' : './images/icon-pinterest.svg'"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li
+              @mouseover="hover = 'instagram'"
+              @mouseout="hover = ''"
+              class="inline-block mr-2"
+            >
+              <a href="">
+                <img
+                  :src="hover == 'instagram' ? './images/icon-instagram-active.svg' : './images/icon-instagram.svg'"
+                  alt=""
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-span-8 md:col-span-4 order-5 text-center md:text-right">
+          <span class="text-sm text-neutral-100">
+            Copyright 2020. All Rights Reserved
+          </span>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+
+    <!-- <script>
+      function coba() {
+        count = 0;
+
+        setInterval(() => {
+          count++;
+        }, 1000);
+
+        return count;
+      }
+
+      function counter() {
+        console.log(coba());
+      }
+    </script> -->
+  </body>
+</html>
